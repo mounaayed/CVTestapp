@@ -1,0 +1,2 @@
+[0705/205220.730:ERROR:process_reader_win.cc(127)] NtOpenThread: {Accès refusé} Un processus a demandé l’accès a un objet, mais il ne bénéficie pas des autorisations nécessaires. (0xc0000022)
+[0705/205220.908:ERROR:exception_snapshot_win.cc(99)] thread ID 4156 not found in process

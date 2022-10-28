@@ -1,0 +1,221 @@
+<section>
+  <div class="block no-padding">
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="main-featured-sec">
+            <div class="new-slide-3">
+              <img src="../../../assets/images/resource/vector-4.png">
+            </div>
+            <div class="job-search-sec">
+              <div class="job-search">
+                <h3>C'EST SIMPLE ,C'EST GRATUIT ET <br> C'EST RAPIDE</h3>
+                <span>Creer un CV ,Passer des Tests
+& Trouver des opportunités d'emploi </span>
+                <form>
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                      <div class="job-field">
+                        <input type="text" placeholder="
+titre du poste mots clés ou nom de l'entreprise"
+                               [ngModelOptions]="{standalone: true}" [(ngModel)]="titreposte"/>
+                        <i class="la la-keyboard-o"></i>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                      <div class="job-field">
+                        <input type="text" class="form-control" [ngModelOptions]="{standalone: true}"
+                               [(ngModel)]="localisation">
+                        <i class="la la-map-marker"></i>
+                      </div>
+                    </div>
+                    <div class="col-lg-1 col-md-2 col-sm-12 col-xs-12">
+                      <button type="submit"><i class="la la-search"></i></button>
+                    </div>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div class="scroll-to">
+              <a href="#scroll-here" title=""><i class="la la-arrow-down"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="heading">
+              <h2>
+                liste Offres</h2>
+              <!--<span>Leading Employers already using job and talent.</span>-->
+            </div><!-- Heading -->
+            <div class="job-listings-sec">
+              <div class="job-listing"
+                   *ngFor="let o of listeoffre |offer:titreposte:localisation| paginate: { itemsPerPage: 5, currentPage: p }">
+                <div class="job-title-sec">
+                  <div class="c-logo"><img src="http://localhost:7000/user/getsfile/{{o.entreprise[0]?.avatar}}"
+                                           alt=""/></div>
+                  <h3><a  title="">{{o.titreposte}}</a></h3>
+
+                </div>
+                <span class="job-lctn"><i class="la la-map-marker"></i>{{o.entreprise[0]?.localisation}}</span>
+                <span class="fav-job"><i class="la la-heart-o"></i></span>
+                <span class="job-is ft">{{o.typecontrat}}</span>
+              </div><!-- Job -->
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <pagination-controls style="float: right; color: #D2A8EC" (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </section>
+</section>
+
+<section id="scroll-here">
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="heading">
+            <h2>Template cv</h2>
+            <span>{{listetemplate?.length}}</span>
+          </div><!-- Heading -->
+          <div class="cat-sec">
+            <div class="row no-gape">
+              <div class="col-lg-3 col-md-3 col-sm-6" *ngFor="let t of listetemplate">
+                <div class="p-category">
+                  <a  title="">
+
+                    <img routerLink="/cv" src="http://localhost:7000/templatecv/getsfile/{{t.image}}"  height="180" width="200" >
+
+                <span>{{t.nomtemplate}}</span>
+
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block double-gap-top double-gap-bottom">
+    <div data-velocity="-.1"
+         style="background: url(images/resource/parallax1.jpg) repeat scroll 50% 422.28px transparent;"
+         class="parallax scrolly-invisible layer color"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="simple-text-block">
+            <h3>
+              Faites une différence avec votre CV en ligne!</h3>
+            <span> Votre CV en quelques minutes avec CVTest est prêt!</span>
+            <a href="#" title="">
+              Créer un Compte</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section>
+  <div class="block">
+    <div data-velocity="-.1"
+         style="background: url(images/resource/parallax2.jpg) repeat scroll 50% 422.28px transparent;"
+         class="parallax scrolly-invisible layer color light"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="heading light">
+            <h2>
+              Mots aimables de candidats heureux</h2>
+            <span>Ce que les autres ont pensé du service fourni par CV Test</span>
+          </div><!-- Heading -->
+          <div class="reviews-sec" id="reviews-carousel">
+            <div class="col-lg-6">
+              <div class="reviews">
+                <img src="images/resource/r1.jpg" alt=""/>
+                <h3>Mohamed Khimiri <span>Web designer</span></h3>
+                <p>Sans CVTest je serais sans-abri, ils m'ont trouvé un emploi et m'ont fait régler rapidement tout!
+                  Je ne peux pas croire le service</p>
+              </div><!-- Reviews -->
+            </div>
+            <div class="col-lg-6">
+              <div class="reviews">
+                <img src="images/resource/r2.jpg" alt=""/>
+                <h3>Ali Gr <span>Testeur Validation</span></h3>
+                <p>Sans CVTest, je serais sans-abri, ils m'ont trouvé un emploi et m'ont fait régler rapidement tout!
+                  Je ne peux pas croire le service</p>
+              </div><!-- Reviews -->
+            </div>
+            <div class="col-lg-6">
+              <div class="reviews">
+                <img src="images/resource/r1.jpg" alt=""/>
+                <h3>Nour El Houda Jawedi <span>Concepteur Web</span></h3>
+                <p>
+                  Sans CVTest, je serais sans-abri, ils m'ont trouvé un emploi et m'ont fait régler rapidement tout!
+                  Je ne peux pas croire le service</p>
+              </div><!-- Reviews -->
+            </div>
+            <div class="col-lg-6">
+              <div class="reviews">
+                <img src="images/resource/r2.jpg" alt=""/>
+                <h3>Ayed Mouna <span>Développeuse</span></h3>
+                <p>
+                  Sans CVTest, je serais sans-abri, ils m'ont trouvé un emploi et m'ont fait régler rapidement tout!
+                  Je ne peux pas croire le service</p>
+              </div><!-- Reviews -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section >
+  <div class="block">
+    <div class="container">
+      <div class="row">
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section>
+  <div class="block no-padding">
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="simple-text">
+            <h3>
+              Une question? </h3>
+            <span>   Nous sommes là pour vous aider. Consultez notre FAQ, envoyez-nous un courriel ou appelez-nous au (+216) 75 202 202</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

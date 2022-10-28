@@ -1,0 +1,86 @@
+
+<div class="content" role="main">
+<div id="global" class="site-global">
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="page" class="site-page">
+
+
+
+
+
+            <div class="center">
+
+              <h2>Quiz et tests de connaissances {{comptence}}</h2>
+
+              <p><strong> 10 questions</strong>
+                à choix multiples vous seront posées.<br>
+                Après validation, vous accéderez à la page de résultats
+                où votre total sera calculé
+                <br>Bonne chance&nbsp;!</p>
+      <!--<h2>{{test.titre}}</h2>-->
+      <div class="filters">
+
+        <ul class="filters-list">
+          <li class="filters-item" *ngFor="let t of listtest">
+            <a *ngIf="t.niveau=='debutant'" >
+              <i aria-hidden="true" class="icon icon-bat1"></i> {{t.niveau}}
+             </a>  <a  *ngIf="t.niveau=='moyenne'" >
+              <i aria-hidden="true" class="icon icon-bat2"></i> {{t.niveau}}
+             </a>  <a *ngIf="t.niveau=='expert'" >
+              <i aria-hidden="true" class="icon icon-bat3"></i> {{t.niveau}}
+             </a>
+          </li>
+
+        </ul>
+      </div>
+              <table class="quiz-table">
+                <thead>
+                <h2>Liste des test disponible pour cette competence:</h2>
+                </thead>
+                <tbody>
+                <tr *ngFor="let te of listtest">
+                  <td class="quiz-title">
+                    <a class="h-link" routerLink="/passertest1/{{te._id}}" style="color: #008cba">{{te.titre}}</a>
+                    <span class="tagtag right cat-html">{{comptence}}</span>
+                  </td>
+                  <td class="quiz-level"><a style="font-size: 20px">
+                    <i *ngIf="te.niveau=='debutant'" aria-hidden="true"  class="icon icon-bat1">
+
+                  </i> <i  *ngIf="te.niveau=='moyenne'"aria-hidden="true" class="icon icon-bat2">
+
+                  </i> <i *ngIf="te.niveau=='expert'" aria-hidden="true" class="icon icon-bat3">
+
+                  </i>
+                    {{te.niveau}}</a></td>
+
+                </tr>
+
+                </tbody>
+              </table>
+      <!-- /.filters -->
+
+
+    </div> <!-- .content -->
+
+
+  </div> <!-- #page -->
+
+  <br>
+  <br>
+  <br>
+  <br>
+
+</div><!-- #global -->
+
+
+
+</div>
+

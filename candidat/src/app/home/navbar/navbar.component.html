@@ -1,0 +1,638 @@
+<div class="responsive-header">
+  <div class="responsive-menubar">
+    <div class="res-logo"><a href="index.html" title=""><img src="../../../assets/images/resource/Logo%20PFE2.png" alt=""/></a>
+    </div>
+    <div class="menu-resaction">
+      <div class="res-openmenu">
+        <img src="../../../assets/images/icon.png" alt=""/> Menu
+      </div>
+      <div class="res-closemenu">
+        <img src="../../../assets/images/icon2.png" alt=""/> Fermé
+      </div>
+    </div>
+  </div>
+  <div class="responsive-opensec">
+    <div class="btn-extars">
+      <a  *ngIf="role==='entreprise'" routerLink="/publieroffre" class="post-job-btn" ><i class="la la-plus"></i>Ajouter des Offres</a>
+      <ul class="account-btns" [hidden]="connected">
+        <li class="signup-popup"><a style="color: white" title=""><i class="la la-key"></i>
+          S'inscrire</a></li>
+        <li class="signin-popup"><a style="color: white" title=""><i class="la la-external-link-square"></i>
+          S'identifier</a>
+        </li>
+      </ul>
+    </div><!-- Btn Extras -->
+    <form class="res-search">
+      <input type="text" placeholder="Job title, keywords or company name"/>
+      <button type="submit"><i class="la la-search"></i></button>
+    </form>
+    <div class="responsivemenu" [hidden]="connected">
+      <ul>
+        <li class="menu-item-has-children">
+          <a href="#" title="">Accueil</a>
+          <ul>
+            <li><a href="index.html" title="">Accueil 1</a></li>
+
+              <li><a href="about.html" title="">
+                À propos de nous</a></li>
+              <li><a routerLink="/**" title="">404
+                Erreur</a></li>
+              <li><a  title="">Contacter nous à</a></li>
+              <li><a title="">FAQ's</a></li>
+              <li><a routerLink="/notresite" title="">
+                Comment ça fonctionne</a></li>
+              <li><a  title="">Termes et conditions</a></li>
+
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a href="#" title="">Entreprises</a>
+          <ul>
+
+            <li class="menu-item-has-children">
+              <a href="#" title="">Entreprise Tableau de bord</a>
+              <ul>
+                <li><a  title="">Entreprise Profil </a></li>
+                <li><a  title=""> Entreprise Candidatures </a></li>
+                <li><a title=""> Entreprise Transactions </a></li>
+                <li><a title="">Entreprise Test</a></li>
+
+                <li><a  title="">Entreprise Offre</a></li>
+                <li><a  title=""> Entreprise Notifications</a></li>
+                <li><a title="">Changer Mot de passe</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a href="#" title="">Candidats</a>
+          <ul>
+
+            <li class="menu-item-has-children">
+              <a  title="">Candidates Tableau de bord</a>
+              <ul>
+                <li><a  title="">Candidat Profil</a></li>
+                <li><a  title="">Candidat CV</a></li>
+                <li><a  title="">Candidat Offre</a></li>
+                <li><a  title="">Candidat Notifications</a></li>
+                <li><a  title=""> Candidat Postuler dans un offre</a></li>
+                <li><a title="">Changer Mot de passe</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="menu-item-has-children">
+          <a  title="">Offre</a>
+          <ul>
+            <li><a href="job_list_classic.html">Offre Liste
+              Classique</a></li>
+
+
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header class="stick-top forsticky new-header">
+
+
+  <div class="menu-sec">
+    <div class="container">
+      <div class="logo">
+        <a title=""><img class="hidesticky" src="../../../assets/images/resource/Logo%20PFE2.png"
+                         alt=""/><img class="showsticky"
+                                      src="../../../assets/images/resource/Logo%20PFE2.png" alt=""/></a>
+      </div><!-- Logo -->
+      <div class="btn-extars">
+        <a href="#" *ngIf="role=='entreprise'" routerLink="/publieroffre" title="" class="post-job-btn"><i class="la la-plus"></i>Ajouter Offre</a>
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        &nbsp;
+        <nav *ngIf="role=='entreprise'">
+          <div class="btns-profiles-sec">
+            <span>
+              <img  routerLink="/profile" src="http://localhost:7000/user/getsfile/{{user?.avatar}}"
+                   alt=""/> {{user.username}} </span>
+            <ul>
+              <li><a routerLink="/profile" title=""><i class="la la-file-text"></i>Profil Entreprise</a></li>
+              <li><a  routerLink="/candidature" title=""><i class="la la-briefcase"></i>Candidatures</a></li>
+              <li><a  title=""><i class="la la-money"></i>
+                Transactions</a></li>
+              <li><a routerLink="/test" title=""><i class="la la-paper-plane"></i>Ajouter Test</a></li>
+              <li><a routerLink="/publieroffre" title=""><i class="la la-file-text"></i>Ajouter Offre</a></li>
+              <li><a  title=""><i class="la la-flash"></i>Notifications</a></li>
+              <li><a title=""><i class="la la-lock"></i>Changer Mot de passe </a></li>
+              <li><a  title=""><i class="la la-unlink" (click)="logout()"></i>
+                Se déconnecter</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <nav *ngIf="role==='candidat'">
+          <div class="my-profiles-sec">
+            <span style="color:black;font-size: 20px">
+              <img class="rounded-circle" src="http://localhost:7000/user/getsfile/{{user?.avatar}}" height="50px"
+                   width="50px">{{user?.nom}}<i
+              class="la la-bars" style="color: #D2A8EC"></i></span>
+          </div>
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          &nbsp;
+          <div class="wishlist-dropsec">
+            <span><i class="la la-heart" style="color: #D2A8EC"></i><strong>{{listfavorie?.length}}</strong></span>
+            <div class="wishlist-dropdown">
+              <ul class="scrollbar">
+                <li *ngFor="let offrec of listfavorie;let i=index">
+                  <div class="job-listing" *ngIf="i<3">
+                    <div class="job-title-sec">
+                      <div class="c-logo"><img src="../../../assets/images/resource/l1.png" alt=""/></div>
+                      <h3><a href="#" title="">typecontrat: {{offre.typecontrat}}</a></h3>
+                      <span>{{offre.titreposte}}</span>
+                    </div>
+
+                  </div><!-- Job -->
+                </li>
+                <a> <i routerLink="/allfavorie" style="color:#D2A8EC ;float: right ;size: 20px"
+                       class="la la-arrow-right">voir all </i>
+                </a>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <ul class="account-btns" [hidden]="connected">
+          <li class="signup-popup"><a title=""><i class="la la-key"></i>
+            S'inscrire</a></li>
+          <li class="signin-popup"><a title=""><i class="la la-external-link-square"></i> S'identifier</a></li>
+        </ul>
+      </div><!-- Btn Extras -->
+      <nav [hidden]="connected">
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="#" title="">Accueil</a>
+            <ul>
+              <li><a href="index.html" title="">Accueil 1</a></li>
+
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#" title="">Entreprises</a>
+            <ul>
+
+              <li class="menu-item-has-children">
+                <a href="#" title="">Entreprise Tableau de bord</a>
+                <ul>
+                  <li><a  title="">Entreprise Profil </a></li>
+                  <li><a  title=""> Entreprise Candidatures </a></li>
+                  <li><a title=""> Entreprise Transactions </a></li>
+                  <li><a title="">Entreprise Test</a></li>
+
+                  <li><a  title="">Entreprise Offre</a></li>
+                  <li><a  title=""> Entreprise Notifications</a></li>
+                  <li><a title="">Changer Mot de passe</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a href="#" title="">Candidats</a>
+            <ul>
+
+              <li class="menu-item-has-children">
+                <a  title="">Candidates Tableau de bord</a>
+                <ul>
+                  <li><a  title="">Candidat Profil</a></li>
+                  <li><a  title="">Candidat CV</a></li>
+                  <li><a  title="">Candidat Offre</a></li>
+                  <li><a  title="">Candidat Notifications</a></li>
+                  <li><a  title=""> Candidat Postuler dans un offre</a></li>
+                  <li><a title="">Changer Mot de passe</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="menu-item-has-children">
+            <a  title="">Offre</a>
+            <ul>
+              <li><a href="job_list_classic.html">Offre Liste
+                Classique</a></li>
+
+
+            </ul>
+          </li>
+        </ul>
+      </nav><!-- Menus -->
+    </div>
+  </div>
+</header>
+
+<div class="account-popup-area signin-popup-box">
+  <div class="account-popup">
+    <span class="close-popup"><i class="la la-close"></i></span>
+    <h3>Utilisateur
+      S'identifier</h3>
+    <span>
+
+ Cliquez pour vous connecter</span>
+    <div class="select-user">
+      <span>Candidat</span>
+      <span>Entreprise</span>
+    </div>
+    <form [formGroup]="loginForm">
+      <div class="cfield">
+        <input type="text" class="form-control" placeholder="email" formControlName="email">
+        <!--[ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>-->
+        <!--<div *ngIf="submitted && f.email.errors" class="invalid-feedback">-->
+        <!--<div *ngIf="f.email.errors.required">Email is required</div>-->
+
+        <!--</div>-->
+        <i class="la la-user"></i>
+      </div>
+      <div class="cfield">
+        <input type="password" placeholder="Password" formControlName="password" class="form-control">
+        <!--[ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>-->
+        <!--<div *ngIf="submitted && f.password.errors" class="invalid-feedback">-->
+        <!--<div *ngIf="f.password.errors.required">Password is required</div>-->
+
+        <!--</div>-->
+        <i class="la la-key"></i>
+      </div>
+
+      <a href="#" title="">Mot de passe oublieé?</a>
+      <button (click)="login()" type="submit">
+        S'identifier</button>
+    </form>
+
+  </div>
+</div><!-- LOGIN POPUP -->
+
+<div class="account-popup-area signup-popup-box">
+  <div class="account-popup">
+    <span class="close-popup"><i class="la la-close"></i></span>
+    <h3>
+      S'inscrire</h3>
+    <div class="select-user">
+      <span (click)="choixcand()">Candidat</span>
+      <span (click)="choixentre()">Entreprise</span>
+    </div>
+    <form [formGroup]="formcandidat" *ngIf="choixcandidat">
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+
+            <input type="text" class="form-control" placeholder="username" formControlName="username"
+                   [ngClass]="{ 'is-invalid': submitted && c.username.errors }"/>
+            <div *ngIf="submitted && c.username.errors" class="invalid-feedback">
+              <div *ngIf="c.username.errors.required">Nom d'utilisateur est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+
+            <input type="text" placeholder="nom" formControlName="nom"
+                   [ngClass]="{ 'is-invalid': submitted && c.nom.errors }"/>
+            <div *ngIf="submitted && c.nom.errors" class="invalid-feedback">
+              <div *ngIf="c.nom.errors.required">Nom est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+            <!--prenom-->
+            <input type="text" placeholder="prenom" formControlName="prenom"
+                   [ngClass]="{ 'is-invalid': submitted && c.prenom.errors }"/>
+            <div *ngIf="submitted && c.prenom.errors" class="invalid-feedback">
+              <div *ngIf="c.prenom.errors.required">Prenom est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--adresse-->
+            <input type="text" placeholder="adresse" formControlName="adresse"
+                   [ngClass]="{ 'is-invalid': submitted && c.adresse.errors }"/>
+            <div *ngIf="submitted && c.adresse.errors" class="invalid-feedback">
+              <div *ngIf="c.adresse.errors.required">Adresse est requis</div>
+
+            </div>
+            <i class="la la-automobile"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+            <!--cin-->
+            <input type="text" placeholder="cin" formControlName="cin"
+                   [ngClass]="{ 'is-invalid': submitted && c.cin.errors }"/>
+            <div *ngIf="submitted && c.cin.errors" class="invalid-feedback">
+              <div *ngIf="c.cin.errors.required">Cin
+                est requis</div>
+
+            </div>
+            <i class="la la-cc-mastercard"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--email-->
+            <input type="text" placeholder="email" formControlName="email"
+                   [ngClass]="{ 'is-invalid': submitted && c.email.errors }"/>
+            <div *ngIf="submitted && c.email.errors" class="invalid-feedback">
+              <div *ngIf="c.email.errors.required">Email est requis</div>
+              <div *ngIf="c.email.errors.email">Email est invalide</div>
+
+            </div>
+            <i class="la la-envelope"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-6">
+          <div class="cfield">
+            <!--password-->
+            <input type="password" formControlName="password" placeholder="password"
+                   [ngClass]="{ 'is-invalid': submitted && c.password.errors }"/>
+            <div *ngIf="submitted && c.password.errors" class="invalid-feedback">
+              <div *ngIf="c.password.errors.required">Mot de passe
+                est requis</div>
+              <div *ngIf="c.password.errors.minlength">Mot de passe incorrecte</div>
+
+            </div>
+            <i class="la la-key"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--age-->
+            <input type="text" formControlName="age" placeholder="age"
+                   [ngClass]="{ 'is-invalid': submitted && c.age.errors }"/>
+            <div *ngIf="submitted && c.age.errors" class="invalid-feedback">
+              <div *ngIf="c.age.errors.required">Age est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--sexe-->
+            <input type="text" formControlName="sexe" placeholder="sexe"
+                   [ngClass]="{ 'is-invalid': submitted && c.sexe.errors }"/>
+            <div *ngIf="submitted && c.sexe.errors" class="invalid-feedback">
+              <div *ngIf="c.sexe.errors.required">Sexe est requis</div>
+
+            </div>
+            <i class="la la-users"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--numtel-->
+            <input type="text" formControlName="numtel" placeholder="numtel"
+                   [ngClass]="{ 'is-invalid': submitted && c.numtel.errors }"/>
+            <div *ngIf="submitted && c.numtel.errors" class="invalid-feedback">
+              <div *ngIf="c.numtel.errors.required">Numéro téléphone est requis</div>
+
+            </div>
+            <i class="la la-phone"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--codepostale-->
+            <input type="text" formControlName="codepostale" placeholder="codepostale"
+                   [ngClass]="{ 'is-invalid': submitted && c.codepostale.errors }"/>
+            <div *ngIf="submitted && c.codepostale.errors" class="invalid-feedback">
+              <div *ngIf="c.codepostale.errors.required">Codepostale est requis</div>
+
+            </div>
+            <i class="la la-map-marker"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--civilite-->
+            <input type="text" formControlName="civilite" placeholder="civilite"
+                   [ngClass]="{ 'is-invalid': submitted && c.civilite.errors }"/>
+            <div *ngIf="submitted && c.civilite.errors" class="invalid-feedback">
+              <div *ngIf="c.civilite.errors.required">Civilité est requis</div>
+
+            </div>
+            <i class="la la-hand-peace-o"></i>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-12">
+        <div class="cfield">
+          <!--avatar-->
+          <input type="file" (change)="postMethod($event.target.files)">
+          <i class="la la-image"></i>
+        </div>
+      </div>
+      <button type="submit" (click)="registercandidat()">S'inscrire</button>
+    </form>
+    <form  [formGroup]="formentreprise" *ngIf="choixentreprise">
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+
+            <input type="text" class="form-control" placeholder="username" formControlName="username"
+                   [ngClass]="{ 'is-invalid': submitted && e.username.errors }"/>
+            <div *ngIf="submitted && e.username.errors" class="invalid-feedback">
+              <div *ngIf="e.username.errors.required">
+                Nom d'utilisateur est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+
+            <input type="text" placeholder="nomentreprise" formControlName="nomentreprise"
+                   [ngClass]="{ 'is-invalid': submitted && e.nomentreprise.errors }"/>
+            <div *ngIf="submitted && e.nomentreprise.errors" class="invalid-feedback">
+              <div *ngIf="e.nomentreprise.errors.required">NomEntreprise est requis</div>
+
+            </div>
+            <i class="la la-user"></i>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+            <!--anneefondation-->
+            <input type="text" placeholder="anneefondation" formControlName="anneefondation"
+                   [ngClass]="{ 'is-invalid': submitted && e.anneefondation.errors }"/>
+            <div *ngIf="submitted && e.anneefondation.errors" class="invalid-feedback">
+              <div *ngIf="e.anneefondation.errors.required">AnneéFondation  est requis</div>
+
+            </div>
+            <i class="la la-calendar"></i>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="cfield">
+            <!--numtel-->
+            <input type="text" placeholder="numtel" formControlName="numtel"
+                   [ngClass]="{ 'is-invalid': submitted && e.numtel.errors }"/>
+            <div *ngIf="submitted && e.numtel.errors" class="invalid-feedback">
+              <div *ngIf="e.numtel.errors.required">Numérotéléphone  est requis</div>
+
+            </div>
+            <i class="la la-phone"></i>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="cfield">
+            <!--localisation-->
+            <input type="text" placeholder="localisation" formControlName="localisation"
+                   [ngClass]="{ 'is-invalid': submitted && e.localisation.errors }"/>
+            <div *ngIf="submitted && e.localisation.errors" class="invalid-feedback">
+              <div *ngIf="e.localisation.errors.required">Localisation  est requis</div>
+
+            </div>
+            <i class="la la-map-marker"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="cfield">
+            <!--secteuractivite-->
+            <input type="text" placeholder="secteuractivite" formControlName="secteuractivite"
+                   [ngClass]="{ 'is-invalid': submitted && e.secteuractivite.errors }"/>
+            <div *ngIf="submitted && e.secteuractivite.errors" class="invalid-feedback">
+              <div *ngIf="e.secteuractivite.errors.required">SecteurActivité  est requis</div>
+
+            </div>
+            <i class="la la-cc-mastercard"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--email-->
+            <input type="text" placeholder="email" formControlName="email"
+                   [ngClass]="{ 'is-invalid': submitted && e.email.errors }"/>
+            <div *ngIf="submitted && e.email.errors" class="invalid-feedback">
+              <div *ngIf="e.email.errors.required">Email  est requis</div>
+              <div *ngIf="e.email.errors.email">Email est invalide</div>
+
+            </div>
+            <i class="la la-envelope"></i>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-6">
+          <div class="cfield">
+            <!--password-->
+            <input type="password" formControlName="password" placeholder="password"
+                   [ngClass]="{ 'is-invalid': submitted && e.password.errors }"/>
+            <div *ngIf="submitted && e.password.errors" class="invalid-feedback">
+              <div *ngIf="e.password.errors.required">Mot de passe  est requis</div>
+              <div *ngIf="e.password.errors.minlength">Mot de passe est incorrecte</div>
+
+            </div>
+            <i class="la la-key"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--description-->
+            <input type="text" formControlName="description" placeholder="description"
+                   [ngClass]="{ 'is-invalid': submitted && e.description.errors }"/>
+            <div *ngIf="submitted && e.description.errors" class="invalid-feedback">
+              <div *ngIf="e.description.errors.required">Description est requis</div>
+
+            </div>
+            <i class="la la-text-height"></i>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="cfield">
+            <!--matriculefiscale-->
+            <input type="text" formControlName="matriculefiscale" placeholder="matriculefiscale"
+                   [ngClass]="{ 'is-invalid': submitted && e.matriculefiscale.errors }"/>
+            <div *ngIf="submitted && e.matriculefiscale.errors" class="invalid-feedback">
+              <div *ngIf="e.matriculefiscale.errors.required">Matriculefiscale est requise</div>
+
+            </div>
+            <i class="la la-cc-mastercard"></i>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="cfield">
+            <!--codepostale-->
+            <input type="text" formControlName="codepostale" placeholder="codepostale"
+                   [ngClass]="{ 'is-invalid': submitted && e.codepostale.errors }"/>
+            <div *ngIf="submitted && e.codepostale.errors" class="invalid-feedback">
+              <div *ngIf="e.codepostale.errors.required">Codepostale est requis</div>
+
+            </div>
+            <i class="la la-map-marker"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="cfield">
+          <!--avatar-->
+          <input type="file" (change)="postMethod($event.target.files)">
+          <i class="la la-image"></i>
+        </div>
+      </div>
+      <button type="submit" (click)="registerentreprise()">S'inscrire</button>
+    </form>
+
+  </div>
+</div>
+<div class="profile-sidebar">
+  <span class="close-profile"><i class="la la-close"></i></span>
+  <div class="can-detail-s">
+    <div class="cst"><img src="http://localhost:7000/user/getsfile/{{user?.avatar}}"></div>
+    <h3>{{user?.nom}} {{user?.prenom}}</h3>
+    <span><i>{{user?.email}}</i></span>
+    <p><a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__"
+          data-cfemail="92f1e0f7f3e6fbe4f7fef3ebf7e0e1a2aaaad2f5fff3fbfebcf1fdff">[email&#160;protégée]</a></p>
+    <p>{{user?.numtel}}</p>
+    <p><i class="la la-map-marker"></i> {{user?.adresse}}</p>
+  </div>
+  <div class="tree_widget-sec">
+    <ul>
+    <li><a routerLink="/profile"  title=""><i class="la la-file-text"></i>Mon Profil</a></li>
+    <li><a routerLink="/cv" title=""><i class="la la-briefcase"></i>Mon CV</a></li>
+    <li><a routerLink="/offre" title=""><i class="la la-money"></i>Consulter Offre</a></li>
+    <li><a  title=""><i class="la la-paper-plane"></i>Notifications</a></li>
+    <li><a routerLink="/cv" title=""><i class="la la-file-text"></i>Postuler dans un offre</a></li>
+    <li><a title=""><i class="la la-flash"></i>Changer Mot de passe</a></li>
+    <li><a title="" ><i class="la la-unlink" (click)="logout()"></i>
+
+      Se déconnecter</a>
+    </li>
+  </ul>
+  </div>
+</div><!-- Profile Sidebar -->
+

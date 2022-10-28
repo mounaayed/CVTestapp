@@ -1,0 +1,98 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1"
+         style="background: url(../../../assets/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;"
+         class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3> {{offre?.entreprise[0]?.nomentreprise}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 column">
+          <div class="job-single-sec">
+            <div class="job-single-head2">
+              <div class="job-title2"><h3>{{offre?.titreposte}}</h3><span class="job-is ft">{{offre?.typecontrat}}</span><i
+                class="la la-heart-o"></i></div>
+              <ul class="tags-jobs">
+                <li><i class="la la-map-marker"></i>
+                  {{offre?.entreprise[0]?.localisation}}
+                  <!--<app-localisation [identreprise]="offre.entreprise"></app-localisation>-->
+                </li>
+                <li><i class="la la-money"></i>
+                  Salaire mensuel : <span>3,5DT - 5DT</span></li>
+                <li><i class="la la-calendar-o"></i> publier le {{offre?.datedebutpublication}}</li>
+              </ul>
+
+            </div><!-- Job Head -->
+            <div class="job-details">
+              <h3>Offre Description</h3>
+              <p>{{offre?.description}}</p>
+              <h3>
+                Connaissances, compétences et capacités requises</h3>
+              {{offre?.competence[0]?.nomcompetence}}
+
+              <ul>
+
+
+                <li>Expérience using Invision a plus</li>
+              </ul>
+              <h3>Education + Experience</h3>
+              <ul>
+                <li>{{offre?.experienceexige}}</li>
+                <li> {{offre?.niveauetudeexige}}</li>
+
+              </ul>
+            </div>
+            <div class="job-overview">
+              <h3>Aperçu du poste</h3>
+              <ul>
+                <li><i class="la la-money"></i>
+                  <h3>Salaire Offert</h3><span>1,5Dt - Dt2,0</span></li>
+
+
+                <li><i class="la la-shield"></i>
+                  <h3>Expérience</h3><span>{{offre?.experienceexige}}</span></li>
+                <li><i class="la la-line-chart "></i>
+                  <h3>Qualification</h3><span>{{offre?.niveauetudeexige}}</span></li>
+              </ul>
+            </div><!-- Job Overview -->
+
+          </div>
+        </div>
+        <div class="col-lg-4 column">
+          <div class="job-single-head style2">
+            <div class="job-thumb"><img routerLink="/profileentreprise/{{offre?.entreprise[0]?._id}}"
+                                        src="http://localhost:7000/user/getsfile/{{offre?.entreprise[0]?.avatar}}"
+                                        width="100px" height="124px" alt=""/></div>
+            <div class="job-head-info">
+              <h4> {{offre?.entreprise[0]?.nomentreprise}}</h4>
+              <span> {{offre?.entreprise[0]?.localisation}}</span>
+              <p><i class="la la-unlink"></i> www.CVTest.com</p>
+              <p><i class="la la-phone"></i> {{offre?.entreprise[0]?.numtel}}</p>
+              <p><i class="la la-envelope-o"></i> <a
+                class="__cf_email__"
+                data-cfemail="8cede0e5a2f8f9eaede2cce6e3eee4f9e2f8a2efe3e1"></a>{{offre?.entreprise[0]?.email}}
+              </p>
+            </div>
+            <a class="apply-thisjob"routerLink="/cv" title=""><i class="la la-paper-plane"></i>Postuler Maintenant!! </a>
+
+            <a routerLink="/offre" title="" class="viewall-jobs">Voir tous les Offres</a>
+          </div><!-- Job Head -->
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>

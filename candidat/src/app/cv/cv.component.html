@@ -1,0 +1,287 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1" style="background: url(images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3 >Mon CV </h3>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section >
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <div class="widget">
+            <div class="tree_widget-sec">
+              <ul>
+                <li><a routerLink="/profile" title=""><i class="la la-file-text"></i>Mon Profil</a></li>
+                <li><a routerLink="/cv" title=""><i class="la la-briefcase"></i>Mon CV</a></li>
+                <li><a routerLink="/offre" title=""><i class="la la-money"></i>Consulter Offre</a></li>
+                <li><a  title=""><i class="la la-user"></i>Notifications</a></li>
+                <li><a  title=""><i class="la la-flash"></i>Changer mot de passe </a></li>
+                <li><a title="" ><i class="la la-unlink" (click)="logout()"></i>
+
+                  Se déconnecter</a>
+              </ul>
+            </div>
+          </div>
+
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+
+<div class="container-fluid">
+  <form #resumeForm="ngForm">
+    <div class="row">
+      <div class="col-md-8" >
+        <div class="shadow-lg card" style="width: 500px">
+          <div class="card-body" >
+            <h4 class="card-title d-flex align-items-center">
+              <i class="fa fa-user">
+
+              </i>
+
+              Présentation </h4>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.nom" name="nom" placeholder="nom"
+                         #nom="ngModel" required
+                         [ngClass]="{'is-invalid': nom.invalid && (nom.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.prenom" name="prenom" placeholder="prenom"
+                         #prenom="ngModel" required
+                         [ngClass]="{'is-invalid': prenom.invalid && (prenom.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                    <textarea class="form-control" [(ngModel)]="resume.address" name="address" rows="3"
+                              placeholder="Address" #Address="ngModel" required
+                              [ngClass]="{'is-invalid': Address.invalid && (Address.touched || resumeForm.submitted) }"></textarea>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.postecherche" name="postecherché"
+                         placeholder="postecherche." #postecherche="ngModel" required
+                         [ngClass]="{'is-invalid': postecherche.invalid && (postecherche.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.numtel" name="numtel"
+                         placeholder="numtel." #numtel="ngModel" required
+                         [ngClass]="{'is-invalid': numtel.invalid && (numtel.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.email" name="emailId"
+                         placeholder="Email ID" #Email="ngModel" required
+                         [ngClass]="{'is-invalid': Email.invalid && (Email.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" [(ngModel)]="resume.permisdeconduite" name="permisdeconduite"
+                         placeholder="permisdeconduite ">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Skills -->
+        <div class="shadow-sm card" style="width: 500px">
+          <div class="card-body">
+            <div class="d-flex justify-content-between card-title">
+              <h4 class="d-flex align-items-center">
+                <i class="fa fa-times-circle">
+
+                </i>
+
+                Compétences</h4>
+              <button class="btn btn-primary" (click)="addSkill()">+</button>
+            </div>
+            <div class="row">
+              <div class="col-md-4" *ngFor="let s of resume.skills; let i=index">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="skill{{i}}" [(ngModel)]="s.value"
+                         placeholder="e.g. Java / Angular / .Net " #Skill="ngModel" required (change)="gototest(s.value)"
+                         [ngClass]="{'is-invalid': Skill.invalid && (Skill.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Experience -->
+        <div class="shadow-sm card" style="width: 500px">
+          <div class="card-body">
+            <div class="d-flex justify-content-between card-title">
+              <h4 class="d-flex align-items-center">
+                <i class="fa fa-times">
+
+                </i>
+                Expériences Profesionnels</h4>
+              <button class="btn btn-primary" (click)="addExperience()">+</button>
+            </div>
+            <div class="row" *ngFor="let ex of resume.experiences; let i=index">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="posteocupe{{i}}" [(ngModel)]="ex.posteocupe"
+                         placeholder="posteocupe" #posteocupe="ngModel" required
+                         [ngClass]="{'is-invalid': posteocupe.invalid && (posteocupe.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="Date" class="form-control" name="datedebut{{i}}" [(ngModel)]="ex.datedebut"
+                         placeholder="datedebut" #datedebut="ngModel" required
+                         [ngClass]="{'is-invalid': datedebut.invalid && (datedebut.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="Date" class="form-control" name="datefin{{i}}" [(ngModel)]="ex.datefin"
+                         placeholder="datefin" #datefin="ngModel" required
+                         [ngClass]="{'is-invalid': datefin.invalid && (datefin.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <div class="form-group">
+                    <textarea class="form-control" name="nomsociete{{i}}" [(ngModel)]="ex.nomsociete" rows="3"
+                              placeholder="nomsociete"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="tacherealise{{i}}" [(ngModel)]="ex.tacherealise"
+                         placeholder="tacherealise" #tacherealise="ngModel" required
+                         [ngClass]="{'is-invalid': tacherealise.invalid && (tacherealise.touched || resumeForm.submitted) }">
+                </div>
+                <div class="form-group">
+                  <input type="number" class="form-control" name="exInMonths{{i}}" [(ngModel)]="ex.experience"
+                         placeholder="Experience in months" #Experience="ngModel" required
+                         [ngClass]="{'is-invalid': Experience.invalid && (Experience.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="shadow-sm card" style="width: 500px">
+          <div class="card-body">
+            <div class="d-flex justify-content-between card-title">
+              <h4 class="d-flex align-items-center">
+                <i class="fa fa-graduation-cap">
+
+                </i>
+                Formations </h4>
+              <button class="btn btn-primary" (click)="addEducation()">+</button>
+            </div>
+            <div class="row" *ngFor="let ed of resume.educations; let i=index">
+              <div class="col-md-4">
+                <div class="form-group">
+                </div>
+                <input type="text" class="form-control" name="diplome{{i}}" [(ngModel)]="ed.diplome"
+                       placeholder="diplome" #diplome="ngModel" required
+                       [ngClass]="{'is-invalid': diplome.invalid && (diplome.touched || resumeForm.submitted) }">
+
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="etablissement{{i}}" [(ngModel)]="ed.etablissement"
+                         placeholder="etablissement" #etablissement="ngModel" required
+                         [ngClass]="{'is-invalid': etablissement.invalid && (etablissement.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="Date" class="form-control" name="datedebut{{i}}" [(ngModel)]="ed.datedebut"
+                         placeholder="datedebut" #datedebut="ngModel" required
+                         [ngClass]="{'is-invalid': datedebut.invalid && (datedebut.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="Date" class="form-control" name="datefin{{i}}" [(ngModel)]="ed.datefin"
+                         placeholder="datefin" #datefin="ngModel" required
+                         [ngClass]="{'is-invalid': datefin.invalid && (datefin.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group">
+                  <input type="text" class="form-control" name="result{{i}}" [(ngModel)]="ed.villepaye"
+                         placeholder="villepaye" #villepaye="ngModel" required
+                         [ngClass]="{'is-invalid': villepaye.invalid && (villepaye.touched || resumeForm.submitted) }">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Other Details -->
+
+        <div class="shadow-sm card" style="width: 500px">
+          <div class="card-body">
+            <h4 class="card-title d-flex align-items-center">
+              <i class="fa fa-bars">  </i>Autres  Détails</h4>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <textarea type="text" class="form-control" [(ngModel)]="resume.otherDetails" name="otherDetails"
+                            rows="4"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="shadow-sm card action-buttons" style="width: 300px">
+          <button (click)="resumeForm.valid ? generatePdf('open') : ''"
+                  class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="fa fa-file-pdf-o">
+
+            </i> <span>Ouvrir le PDF</span></button>
+          <button (click)="resumeForm.valid ? generatePdf('download') : ''"
+                  class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="fa fa-download">
+
+            </i><span>
+Télécharger le PDF</span></button>
+          <button (click)="resumeForm.valid ? generatePdf('print') : ''"
+                  class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="fa fa-print">
+
+            </i><span>
+Imprimer le PDF</span></button>
+
+          <button type='reset' (click)="resetForm()"
+                  class="btn btn-primary d-flex align-items-center justify-content-center">
+            <i class="fa fa-close">
+
+            </i><span>
+Réinitialiser</span></button>
+        </div>
+
+        <div class="card p-4" style="width: 300px">
+          <div class="form-group">
+            <label class="h4 mb-3" >
+              Montrez votre image dans CV</label>
+            <input type="file" class="form-control-file" (change)="fileChanged($event)" aria-describedby="fileHelpId">
+          </div>
+          <img *ngIf="resume.profilePic" [src]="resume.profilePic" class="img-thumbnail">
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+          </div></div></div></div></div></section>

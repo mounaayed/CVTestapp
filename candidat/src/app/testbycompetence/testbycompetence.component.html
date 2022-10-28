@@ -1,0 +1,90 @@
+
+<div class="content" role="main">
+  <div id="global" class="site-global">
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="page" class="site-page">
+
+
+
+
+
+      <div class="center">
+
+        <h2>Quiz et tests de connaissances {{test.comptence}}</h2>
+
+
+
+
+        <form  class="lecture">
+
+
+        <div class="quiz-question" *ngFor="let t of test.question;let index=index">
+
+        <div class="quiz-numero"><span>{{index+1}}</span></div>
+
+        <div class="quiz-txt">
+
+        <p class="quiz-intitule">{{t.libelle}}</p>
+
+   <div *ngFor="let p of test.question[index].proposition">
+     <ul >
+
+       <li >
+         <div class="quiz-choix"  id="{{index}}">
+           <input type="radio" id="{{'choice ' + index + p }}"
+                  name="{{index}}"    (change)="selectedItem(p)">
+           <label for="{{'choice ' + index + p }}"><app-proposition [id]="p"></app-proposition></label>
+
+
+
+
+         </div>
+       </li>
+
+
+       <li>
+
+       </li>        </ul>
+
+
+   </div>
+
+
+        </div>
+
+        </div> <!-- quiz-question -->
+
+
+
+
+        <p class="center quiz-submit"><input type="submit" id="btn" routerLink="/resultat/{{result}}"   value="Valider les réponses" class="awesome orange large" /></p>
+
+        </form>
+
+
+
+      </div> <!-- .content -->
+
+
+    </div> <!-- #page -->
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </div><!-- #global -->
+
+
+
+</div>
+
+

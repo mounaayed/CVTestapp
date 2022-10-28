@@ -1,0 +1,129 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1" style="background: url(images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>{{user.NomEntreprise}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 column">
+          <div class="job-single-sec style3">
+            <div class="job-wide-devider">
+              <div class="job-overview divide">
+                <h3>
+                  Informations sur l'entreprise</h3>
+                <ul>
+                  <li><i class="la la-eye"></i><h3>Viewed </h3><span>164</span></li>
+                  <li><i class="la la-file-text"></i><h3>Posted Jobs</h3><span>4</span></li>
+                  <li><i class="la la-map"></i><h3>Locations</h3><span>Sousse,Tunis </span></li>
+                </ul>
+                <ul>
+                  <li><i class="la la-bars"></i><h3>SecteurActivité</h3><span>{{user.secteuractivite}}</span></li>
+                  <li><i class="la la-clock-o"></i><h3>
+
+                    Depuis</h3><span>{{user.anneefondation}}</span></li>
+                  <li><i class="la la-users"></i><h3>
+                    Taille de l'équipe</h3><span>15</span></li>
+                </ul>
+                <ul>
+                  <li><i class="la la-user"></i><h3>Suiveurs</h3><span>15</span></li>
+                </ul>
+              </div><!-- Job Overview -->
+              <div class="job-details">
+                <h3>Entreprise Information</h3>
+                <p>
+                  Bien plus qu'un rang a vu le merle bleu après l'extérieur ignoblement
+                  soi-disant plus quand oh avec arrogance véhément irrésistiblement tatillon insecte pingouin en plus wow absolument crud dalmatien hâtivement précipitamment un encart brillant un échowna casoar quelques perroquets et autant de bonté certains ont gelé la chauve-souris bien maussade connectée merveilleusement sur anguille instantanément
+                  vaillamment caressé cela le long de beaucoup haut la main. </p>
+
+                <ul>
+                  <li>Capacité à écrire du code - HTML et CSS (version SCSS de SASS préférée lors de l'écriture de CSS)</li>
+                  <li>
+                    Maîtrise de Photoshop, Illustrator, points bonus pour la familiarité avec Sketch (Sketch est notre concept préféré)</li>
+                  <li>Tests multi-navigateurs et plateformes comme pratique standard</li>
+                  <li>Expérience avec Invision un plus</li>
+                  <li>Expérience en production vidéo un atout ou, au minimum, une volonté d'apprendre</li>
+                </ul>
+
+              </div>
+              <div class="recent-jobs">
+                <h3>
+                  Offres d'emploi de Business Network</h3>
+                <div class="job-list-modern">
+                  <div class="job-listings-sec no-border">
+                    <div class="job-listing wtabs noimg">
+                      <div class="job-title-sec">
+                        <h3><a href="#" title="">Developpeur</a></h3>
+                        <span>Data Line</span>
+                        <div class="job-lctn"><i class="la la-map-marker"></i>Tunis</div>
+                      </div>
+                      <div class="job-style-bx">
+                        <span class="job-is ft">Temps complet</span>
+                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                        <i>il 'y 5 mois </i>
+                      </div>
+                    </div>
+                    <div class="job-listing wtabs noimg">
+                      <div class="job-title-sec">
+                        <h3><a href="#" title="">
+                          Développeur C (Senior) C .Net</a></h3>
+                        <span>Mobilite</span>
+                        <div class="job-lctn"><i class="la la-map-marker"></i>Monastir, Tunisie</div>
+                      </div>
+                      <div class="job-style-bx">
+                        <span class="job-is pt ">
+À temps partiel</span>
+                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                        <i>
+                          il y a 5 mois</i>
+                      </div>
+                    </div><!-- Job -->
+                    <!-- Job -->
+                    <div class="job-listing wtabs noimg">
+                      <div class="job-title-sec">
+                        <h3><a href="#" title="">
+                          Responsable Marketing</a></h3>
+                        <span>Anypli</span>
+                        <div class="job-lctn"><i class="la la-map-marker"></i>Monastir</div>
+                      </div>
+                      <div class="job-style-bx">
+                        <span class="job-is ft ">Temps Complet</span>
+                        <span class="fav-job"><i class="la la-heart-o"></i></span>
+                        <i>Depuis 4 mois</i>
+                      </div>
+                    </div><!-- Job -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 column">
+          <div class="job-single-head style2">
+            <div class="job-thumb"> <img height="100px" width="140px"src="http://localhost:7000/user/getsfile/{{user.avatar}}" alt="" /> </div>
+            <div class="job-thumb"> <img height="100px" width="140px"src="http://localhost:7000/user/getsfile/{{user.avatar}}" alt="" /> </div>
+            <div class="job-head-info">
+              <h4>{{user?.NomEntreprise}}</h4>
+              <span>{{user.localisation}}{{user.codepostale}}"</span>
+              <p><i class="la la-unlink"></i> www.CVTest.com</p>
+              <p><i class="la la-phone"></i>{{user.numtel}}</p>
+              <p><i class="la la-envelope-o"></i> <a href="https://grandetest.com/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ff9e9396d18b8a999e91bf95909d978a918bd19c9092">[email&#160;protected]</a></p>
+            </div>
+
+          </div><!-- Job Head -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

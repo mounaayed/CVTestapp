@@ -1,0 +1,105 @@
+<section class="overlape">
+  <div class="block no-padding">
+    <div data-velocity="-.1" style="background: url(../../assets/images/resource/mslider1.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible no-parallax"></div><!-- PARALLAX BACKGROUND IMAGE -->
+    <div class="container fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner-header">
+            <h3>Bienvenue</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br>
+<br>
+<br>
+<br>
+<section>
+  <div class="block no-padding">
+    <div class="container">
+      <div class="row no-gape">
+        <aside class="col-lg-3 column border-right">
+          <div class="widget">
+            <div class="tree_widget-sec">
+              <ul>
+                <li><a  title=""><i class="la la-file-text"></i>Mon Profil</a></li>
+                <li><a  title=""><i class="la la-briefcase"></i>Mon CV</a></li>
+                <li><a  title=""><i class="la la-money"></i>Consulter Offre</a></li>
+                <li><a  title=""><i class="la la-paper-plane"></i>Notifications</a></li>
+                <li><a  title=""><i class="la la-file-text"></i>Postuler dans un offre</a></li>
+                <li><a title=""><i class="la la-flash"></i>Changer Mot de passe</a></li>
+                <li><a title="" ><i class="la la-unlink" (click)="logout()"></i>
+
+                  Se déconnecter</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="widget">
+            <div class="skill-perc">
+              <h2>
+                Pourcentage de compétences </h2>
+              <p>Mettez de la valeur pour le champ "Image de couverture" pour augmenter vos compétences jusqu'à "15%"</p>
+              <div class="skills-bar">
+
+                <div
+                  class="second circle"
+                  data-size="155"
+                  data-thickness="60">
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+<div style="margin-left: 100px">
+
+
+                <div class="card">
+                  <div class="header">
+
+                    <div class="profile-image"> <img src="../assets/images/user.png" class="rounded-circle" alt=""> </div>
+                    <div>
+                      <h2 class="m-b-0"><strong>{{candidat.nom}}</strong></h2>
+                      <img class="rounded-circle" height="100px" width="140px" src="http://localhost:7000/user/getsfile/{{candidat.avatar}}">
+                    </div>
+                    <ul class="header-dropdown">
+                      <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"></a>
+
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="body">
+                    <a class="text-muted">{{candidat.adresse}}</a>
+
+
+                    <hr>
+                    <small class="text-muted">Email address: {{candidat.email}}</small>
+                    <p>{{candidat.email}}</p>
+                    <hr>
+                    <small class="text-muted">Téléphone: </small>
+                    <p>{{candidat.numtel}}</p>
+                    <hr>
+                    <small class="text-muted">Age: </small>
+                    <p class="m-b-0">{{candidat.age}}</p>
+                    <hr>
+
+                  </div>
+                </div>
+
+
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
